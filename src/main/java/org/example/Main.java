@@ -4,5 +4,14 @@ package org.example;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
+        SchoolManagementSystem schoolManagementSystem = new SchoolManagementSystem();
+        System.out.println(schoolManagementSystem.findCourse("C001"));
+        schoolManagementSystem.addDepartment("Computer Science");
+        schoolManagementSystem.addDepartment("Social Science");
+        schoolManagementSystem.addDepartment("Computer Technology");
+        schoolManagementSystem.addDepartment("Math");
+        schoolManagementSystem.addDepartment(" Music");
+        schoolManagementSystem.addDepartment(" Game");
+        schoolManagementSystem.printDepartments();
     }
 }
