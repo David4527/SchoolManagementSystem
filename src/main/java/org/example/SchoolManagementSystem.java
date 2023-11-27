@@ -8,7 +8,7 @@ public class SchoolManagementSystem {
     public void printTeachers() {
 
     }
-    public void modifyCourseTeacher(String Course, String Teacher) {
+    public void modifyCourseTeacher(String teacherId, String courseId) {
 
     }
     public void addDepartment(String departmentName) {
@@ -23,7 +23,7 @@ public class SchoolManagementSystem {
     public void addCourse(String courseName,double credit,String id ) {
 
     }
-    public  void registerCourse(String Course,String Course1) {
+    public  void registerCourse(String studentId,String courseId) {
 
     }
     public void addTeacher(String fname,String lname,String id) {
