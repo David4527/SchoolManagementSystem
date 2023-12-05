@@ -9,7 +9,7 @@ public class Main {
         schoolManagementSystem.addDepartment("Computer Science");
         schoolManagementSystem.addDepartment("Social Science");
         schoolManagementSystem.addDepartment("Computer Technology");
-        schoolManagementSystem.addDepartment("Math");
+        schoolManagementSystem.addDepartment("math");
         schoolManagementSystem.addDepartment(" Music");
         schoolManagementSystem.addDepartment(" Game");
         schoolManagementSystem.printDepartments();
