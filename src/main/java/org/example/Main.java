@@ -26,5 +26,23 @@ public class Main {
         schoolManagementSystem.registerCourse("S001","C001");
         schoolManagementSystem.registerCourse("S001","C002");
         schoolManagementSystem.findStudent("S001");
+ /*
+        for (int i = 1; i < 42; i++) {
+            for (int j = 1; j < 6; j++) {
+                int myrand = (int) (500*Math.random());
+                schoolManagementSystem.addStudent("David"+myrand, "Adesina"+myrand, "D00"+j);
+            }
+
+        }
+*/
+/*
+        for (int i = 1; i < 6; i++) {
+            for (int j = 1; j < 6 ; j++) {
+                int myrand = (int) (50*Math.random());
+                schoolManagementSystem.addTeacher("Dapo" + myrand,"Adesina" +myrand, "D00"+j);
+            }
+        }
+
+        */
     }
 }
