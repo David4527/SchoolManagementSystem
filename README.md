@@ -1,6 +1,7 @@
 # Project Summary 
 The project includes the following classes:
-﻿﻿**SchoolManagementSystem**: Represents a school that encloses all the various methods Into one entity; gathering of information by the user; serves purpose of academic, classification and management of information in different classes  such as : 
+﻿﻿**SchoolManagementSystem**: 
+Represents a school that encloses all the various methods Into one entity; gathering of information by the user; serves purpose of academic, classification and management of information in different classes  such as : 
 ﻿﻿**Department**: Class, Represents the  departments within the school system
 findDepartment: retrieving or searching for information about a department in a system, including looking up a department by its name or 
 addDepartment: adding a new department to a system or application involving creating a new department object, setting its properties, and adding it to the system.
