@@ -1,7 +1,8 @@
+/**
+ * Author:David Adesina
+ */
+
 package org.example;
-
-import java.util.Arrays;
-
 public class SchoolManagementSystem {
     Department[] departments = new Department[5];
     Student[] students = new Student[200];
@@ -15,12 +16,9 @@ public class SchoolManagementSystem {
 
                 return matchedId;
             }
-
-           // System.out.println(departments[i].substring(36).replace('\'', ' ').replace(')', ' ').trim());
         }
         return null;
     }
-
     public void printTeachers() {
         for (Teacher teacher : teachers) {
             if (teacher != null) {
@@ -109,25 +107,17 @@ public class SchoolManagementSystem {
 
                 System.out.println("Student "+studentId+" has already registered "+Course.MAX_STUDENT_NUM +"courses, register course for student "+studentId+" failed. ");
             }
-       //     else if (Arrays.asList(registerStudent.getCourses()).contains(registerCourse)) {
-        //        System.out.println("Student "+studentId+" has already registered Course "+courseId+", register course "+courseId+" for student "+studentId+" failed. ");
-
-            //}
             else if (registerStudent.getCourseNum() >= Student.MAX_COURSE_NUM) {
                 System.out.println("Course "+courseId+" has been fully registered, register course "+courseId+ " for student "+studentId+" failed. \n");
-
             } else {
                 Student[] regstud = new Student[students.length];
-
                 for (int i = 0; i < students.length; i++) {
                     if (regstud[i] == null && students[i] != null) {
                         regstud[i] = findStudent(studentId);
                         registerCourse.setStudentNum(i);
-                      //  break;
                     }
                 }
                  registerCourse.setStudents(regstud);
-
                 System.out.println("Latest course info");
                 System.out.println(registerCourse);
 
@@ -137,7 +127,7 @@ public class SchoolManagementSystem {
                     if (regcourse[i] == null && courses[i] != null) {
                         regcourse[i] = findCourse(courseId);
                         registerStudent.setCourseNum(i);
-                        //  break;
+                        break;
                     }
                 }
                 registerStudent.setCourses(regcourse);

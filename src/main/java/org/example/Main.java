@@ -25,10 +25,6 @@ public class Main {
         schoolManagementSystem.modifyCourseTeacher("T001","C002");
         schoolManagementSystem.registerCourse("S001","C001");
         schoolManagementSystem.registerCourse("S001","C002");
-        //schoolManagementSystem.registerCourse("S002","C003");
-
-        //     schoolManagementSystem.printTeachers();
-     //   schoolManagementSystem.printCourses();
         schoolManagementSystem.findStudent("S001");
     }
 }
