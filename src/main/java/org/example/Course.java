@@ -4,10 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@ToString
+import java.util.Arrays;
 @Getter
 @Setter
 public class Course {
+    public static final int MAX_STUDENT_NUM = 5;
     private double credit;
     private String id;
     private Student[] students;
@@ -15,9 +16,22 @@ public class Course {
     private int studentNum;
     private Teacher teacher;
     private String courseName;
+    private static int nextid = 1;
     public Course(String courseName, double credit, Department department) {
         this.courseName = courseName;
         this.credit = credit;
         this.department = department;
+        this.id = String.format("C%03d", nextid++);
+    }
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id='" + id + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", credit=" + credit +
+                ", teacher=" + teacher +
+                ", department='" + department.getDepartmentName() +
+                "', students=[" + Arrays.toString(students) + "]" +
+                '}';
     }
 }

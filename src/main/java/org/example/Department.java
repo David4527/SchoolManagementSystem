@@ -16,4 +16,9 @@ public class Department {
         this.id = String.format("D%03d", nextId++);
         this.departmentName = departmentName;
     }
+
+    @Override
+    public String toString() {
+        return "Department(id=" + this.id + ", departmentName=" + "'" + departmentName + "')";
+    }
 }
