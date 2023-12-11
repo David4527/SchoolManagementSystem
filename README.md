@@ -1,4 +1,5 @@
-# Project Summary 
+# Project Overviw
+**Author:David Adesina**
 The project includes the following classes:
 ﻿﻿**SchoolManagementSystem**: 
 Represents a school that encloses all the various methods Into one entity; gathering of information by the user; serves purpose of academic, classification and management of information in different classes  such as : 
