@@ -23,12 +23,16 @@ public class SchoolManagementSystem {
 
     public void printTeachers() {
         for (Teacher teacher : teachers) {
-            System.out.println(teacher);
+            if (teacher != null) {
+                System.out.println(teacher);
+            }
         }
     }
     public void printCourses() {
         for (Course course : courses) {
-            System.out.println(course);
+            if (course != null) {
+                System.out.println(course);
+            }
         }
     }
     public void modifyCourseTeacher(String teacherId, String courseId) {
@@ -62,7 +66,9 @@ public class SchoolManagementSystem {
         }
     public void printStudents() {
         for (Student student : students) {
-            System.out.println(student);
+            if (student != null) {
+                System.out.println(student);
+            }
         }
     }
     public Student findStudent(String studentId) {
@@ -77,13 +83,12 @@ public class SchoolManagementSystem {
     public void addCourse(String courseName,double credit,String departmentId ) {
         if (findDepartment(departmentId) != null) {
             Course course = new Course(courseName, credit, findDepartment(departmentId));
-            int checkTeacherId = Integer.parseInt(course.getId().replace('C', ' ').trim());
-            if (checkTeacherId <= 30) {
+            int checkCourseId = Integer.parseInt(course.getId().replace('C', ' ').trim());
+            if (checkCourseId <= 30) {
                 System.out.println(course + " successfully.");
                 for (int i = 0; i < courses.length; i++) {
                     if (courses[i] == null) {
                         courses[i] = course;
-
                         //teacher.setCourseNum(i++);
                         break;
                     }
@@ -100,26 +105,47 @@ public class SchoolManagementSystem {
                 System.out.println("Cannot find any student match with studentId" + studentId  + ", register course for student" + studentId + " failed. ");
             } else if(registerStudent == null) {
                 System.out.println("Cannot find any student match with courseId" + courseId + ", register course for student" + studentId + " failed.");
-            } else if (registerStudent.getCourseNum() <= Course.MAX_STUDENT_NUM) {
-                Student[] regstud = new Student[5];
-            //    String[] strregstud = new String[5];
+            } else if (registerCourse.getStudentNum() >= Course.MAX_STUDENT_NUM) {
+
+                System.out.println("Student "+studentId+" has already registered "+Course.MAX_STUDENT_NUM +"courses, register course for student "+studentId+" failed. ");
+            }
+       //     else if (Arrays.asList(registerStudent.getCourses()).contains(registerCourse)) {
+        //        System.out.println("Student "+studentId+" has already registered Course "+courseId+", register course "+courseId+" for student "+studentId+" failed. ");
+
+            //}
+            else if (registerStudent.getCourseNum() >= Student.MAX_COURSE_NUM) {
+                System.out.println("Course "+courseId+" has been fully registered, register course "+courseId+ " for student "+studentId+" failed. \n");
+
+            } else {
+                Student[] regstud = new Student[students.length];
 
                 for (int i = 0; i < students.length; i++) {
                     if (regstud[i] == null && students[i] != null) {
                         regstud[i] = findStudent(studentId);
-              //          strregstud[i] = regstud[i].getFname() + " " + regstud[i].getLname();
                         registerCourse.setStudentNum(i);
-                        break;
+                      //  break;
                     }
                 }
-                registerCourse.setStudents(regstud);
-                System.out.println("Latest course info");
-                System.out.println(findCourse(courseId).toString());
+                 registerCourse.setStudents(regstud);
 
-                // registerStudent.setCourses(regstud);
+                System.out.println("Latest course info");
+                System.out.println(registerCourse);
+
+                Course[] regcourse = new Course[courses.length];
+
+                for (int i = 0; i < courses.length; i++) {
+                    if (regcourse[i] == null && courses[i] != null) {
+                        regcourse[i] = findCourse(courseId);
+                        registerStudent.setCourseNum(i);
+                        //  break;
+                    }
+                }
+                registerStudent.setCourses(regcourse);
+                System.out.println("Latest student info");
+                System.out.println(registerStudent);
+
             }
         }
-
     public void addTeacher(String fname,String lname,String departmentId) {
         if (findDepartment(departmentId) != null) {
             Teacher teacher = new Teacher(fname, lname, findDepartment(departmentId));
@@ -152,7 +178,9 @@ public class SchoolManagementSystem {
     }
     public void printDepartments() {
         for (Department department : departments) {
-            System.out.println(department);
+            if (department != null) {
+                System.out.println(department);
+            }
         }
     }
     public void addStudent(String fname, String lname, String departmentId) {

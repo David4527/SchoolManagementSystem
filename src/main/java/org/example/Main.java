@@ -24,8 +24,11 @@ public class Main {
         schoolManagementSystem.addCourse("Intro To Math", 3.0,"D003");
         schoolManagementSystem.modifyCourseTeacher("T001","C002");
         schoolManagementSystem.registerCourse("S001","C001");
-      //  schoolManagementSystem.printTeachers();
-       // schoolManagementSystem.printCourses();
-       // schoolManagementSystem.findStudent("S001");
+        schoolManagementSystem.registerCourse("S001","C002");
+        schoolManagementSystem.registerCourse("S002","C003");
+
+        //     schoolManagementSystem.printTeachers();
+     //   schoolManagementSystem.printCourses();
+        schoolManagementSystem.findStudent("S001");
     }
 }

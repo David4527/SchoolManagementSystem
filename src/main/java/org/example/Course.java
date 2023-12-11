@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 @Getter
 @Setter
@@ -25,13 +26,22 @@ public class Course {
     }
     @Override
     public String toString() {
+        ArrayList<String> mystudents = new ArrayList<>();
+        if (students != null) {
+            for (Student student : students) {
+                if (student != null) {
+                    String mystudentName = student.getFname() + " " + student.getLname();
+                    mystudents.add(mystudentName);
+                }
+            }
+        }
         return "Course{" +
                 "id='" + id + '\'' +
                 ", courseName='" + courseName + '\'' +
                 ", credit=" + credit +
                 ", teacher=" + teacher +
                 ", department='" + department.getDepartmentName() +
-                "', students=[" + Arrays.toString(students) + "]" +
+                "', students=" + mystudents + " " +
                 '}';
     }
 }

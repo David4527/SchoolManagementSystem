@@ -4,12 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 @ToString
 @Getter
 @Setter
 public class Student {
+    public static final int MAX_COURSE_NUM = 5;
     private String fname;
     private Course[] courses;
     private String id;
@@ -26,13 +28,22 @@ public class Student {
     }
     @Override
     public String toString() {
+        ArrayList<String> mycourses = new ArrayList<>();
+        if (courses != null) {
+            for (Course course : courses) {
+                if (course != null) {
+                    String mystudentName = course.getCourseName();
+                    mycourses.add(mystudentName);
+                }
+            }
+        }
         return "Student{" +
-                ", id='" + id + '\'' +
-                "fname='" + fname + '\'' +
+                "id='" + id + '\'' +
+                ", fname='" + fname + '\'' +
                 ", lname='" + lname + '\'' +
                 ", department=" + department +
                 ", courseNum=" + courseNum +
-                ", courses=[]" + Arrays.toString(courses) +
+                ", courses=" + mycourses +
                 '}';
     }
 }
