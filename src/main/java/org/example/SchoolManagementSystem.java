@@ -89,7 +89,7 @@ public class SchoolManagementSystem {
                 for (int i = 0; i < courses.length; i++) {
                     if (courses[i] == null) {
                         courses[i] = course;
-                        //teacher.setCourseNum(i++);
+                        courses[i].setStudentNum(i++);
                         break;
                     }
                 }
@@ -192,7 +192,7 @@ public class SchoolManagementSystem {
                 for (int i = 0; i < students.length; i++) {
                     if (students[i] == null) {
                         students[i] = student;
-                       // student.setCourseNum;
+                        students[i].setCourseNum(i++);
                         break;
                     }
                 }

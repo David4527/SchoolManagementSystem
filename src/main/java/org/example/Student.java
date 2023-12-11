@@ -24,8 +24,11 @@ public class Student {
         this.lname = lname;
         this.department = department;
         this.id = String.format("S%03d", nextId++);
-        this.courseNum = nextId - 2;
+        this.courses = new Course [MAX_COURSE_NUM];
+        this.courseNum = 0;
+        //this.courseNum = nextId - 2;
     }
+
     @Override
     public String toString() {
         ArrayList<String> mycourses = new ArrayList<>();
